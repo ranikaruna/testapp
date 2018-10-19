@@ -13,8 +13,8 @@ def hello():
     return handle_request_html()
 
 def handle_request_html():
-    os.environ['SUCCESS_RATE'] = "9"
-    if randrange(1, 10) > int(os.environ['SUCCESS_RATE']):
+    os.environ['SUCCESS_RATE'] = "90"
+    if randrange(1, 100) > int(os.environ['SUCCESS_RATE']):
         c.labels(http_code = '500').inc()
         return "Internal Server Error\n", 500
     else:
@@ -22,8 +22,8 @@ def handle_request_html():
         return "Hello World!\n"
     
 def new_handle_request_html():
-    os.environ['SUCCESS_RATE'] = "6"
-    if randrange(1, 10) > int(os.environ['SUCCESS_RATE']):
+    os.environ['SUCCESS_RATE'] = "60"
+    if randrange(1, 100) > int(os.environ['SUCCESS_RATE']):
         c.labels(http_code = '500').inc()
         return "Internal Server Error\n", 500
     else:

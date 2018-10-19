@@ -8,12 +8,22 @@ import os
 app = Flask('kayenta-tester')
 c = Counter('requests', 'Number of requests served, by http code', ['http_code'])
 
-#os.environ['SUCCESS_RATE'] = "6"
-os.environ['SUCCESS_RATE'] = "9"
-
 @app.route('/')
 def hello():
+    return handle_request_html()
+
+def handle_request_html():
+    os.environ['SUCCESS_RATE'] = "9"
     if randrange(1, 10) > int(os.environ['SUCCESS_RATE']):
+        c.labels(http_code = '500').inc()
+        return "Internal Server Error\n", 500
+    else:
+        c.labels(http_code = '200').inc()
+        return "Hello World!\n"
+    
+def new_handle_request_html():
+        os.environ['SUCCESS_RATE'] = "6"
+        if randrange(1, 10) > int(os.environ['SUCCESS_RATE']):
         c.labels(http_code = '500').inc()
         return "Internal Server Error\n", 500
     else:

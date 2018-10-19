@@ -12,7 +12,7 @@ c = Counter('requests', 'Number of requests served, by http code', ['http_code']
 def hello():
     return handle_request_html()
 
-# http request handler for all
+# http request handler for all1
 def handle_request_html():
     os.environ['SUCCESS_RATE'] = "90"
     if randrange(1, 100) > int(os.environ['SUCCESS_RATE']):

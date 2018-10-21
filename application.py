@@ -10,7 +10,7 @@ c = Counter('requests', 'Number of requests served, by http code', ['http_code']
 
 @app.route('/')
 def hello():
-    return new_handle_request_html()
+    return handle_request_html()
 
 # http request handler for all
 def handle_request_html():
@@ -35,5 +35,3 @@ def new_handle_request_html():
 
 start_http_server(8000)
 app.run(host = '0.0.0.0', port = 8080)
-
-# jms jms

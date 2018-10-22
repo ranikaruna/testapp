@@ -13,7 +13,7 @@ def hello():
     return handle_request_html()
 
 # http request handler for all
-def new_handle_request_html():
+def handle_request_html():
     os.environ['SUCCESS_RATE'] = "90"
     if randrange(1, 100) > int(os.environ['SUCCESS_RATE']):
         c.labels(http_code = '500').inc()

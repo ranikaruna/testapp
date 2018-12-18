@@ -8,7 +8,6 @@ import os
 app = Flask('kayenta-tester')
 c = Counter('requests', 'Number of requests served, by http code', ['http_code'])
 
-#sanchita
 @app.route('/')
 def hello():
     return handle_request_html()

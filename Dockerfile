@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM index.docker.io/sanchitaghai/public-app:san
 #FROM alpine:latest
 #FROM python:3-slim
 RUN apt-get update -y

@@ -10,7 +10,7 @@ c = Counter('requests', 'Number of requests served, by http code', ['http_code']
 #sanchita
 @app.route('/')
 def hello():
-    return handle_request_html()
+    return new_handle_request_html()
 #sanchita
 # http request handler for all
 def handle_request_html():

@@ -11,7 +11,7 @@ c = Counter('requests', 'Number of requests served, by http code', ['http_code']
 @app.route('/')
 def hello():
     return handle_request_html()
-#sanchita
+
 # http request handler for all
 def handle_request_html():
     os.environ['SUCCESS_RATE'] = "90"

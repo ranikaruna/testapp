@@ -10,7 +10,7 @@ c = Counter('requests', 'Number of requests served, by http code', ['http_code']
 
 @app.route('/')
 def hello():
-    return new_handle_request_html()
+    return handle_request_html()
 
 # http request handler for all
 def handle_request_html():
@@ -22,7 +22,7 @@ def handle_request_html():
         c.labels(http_code = '200').inc()
         return "Hello World!\n"
 
-#sanchita
+
 # New http handler for all
 def new_handle_request_html():
     os.environ['SUCCESS_RATE'] = "40"

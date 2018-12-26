@@ -22,7 +22,7 @@ def handle_request_html():
         c.labels(http_code = '200').inc()
         return "Hello World!\n"
 
-#sanchita
+
 # New http handler for all
 def new_handle_request_html():
     os.environ['SUCCESS_RATE'] = "40"
